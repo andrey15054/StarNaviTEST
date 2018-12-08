@@ -1,0 +1,39 @@
+#wrap {
+    background: black;
+    opacity: 0.8;
+    padding: 20px 40px;
+    z-index: 1;
+  }
+  
+  #view {
+    @include flex(row, center, center);
+    z-index: 2;
+    padding: 20px;
+  
+    img {
+      border-radius: 3px;
+      height: 100%;
+    }
+  
+    button {
+      align-self: flex-start;
+      margin-left: 10px;
+  
+      svg {
+        fill: white;
+        &:hover {
+          fill: red;
+        }
+      }
+    }
+  }
+  
+  #wrap,
+  #view {
+    display: none;
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+  }

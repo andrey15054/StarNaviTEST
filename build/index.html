@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test work</title>
+<style>*{padding:0;margin:0;box-sizing:border-box}a{text-decoration:none}a:hover{cursor:pointer}button{background:none;border:none}button:hover{cursor:pointer}h3,h4{font-weight:400}ul{list-style-type:none}body{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-ms-flex-align:center;align-items:center;position:relative;min-width:1300px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;color:#333;height:100vh}.content{-webkit-align-items:stretch;-ms-flex-align:stretch;align-items:stretch;height:100%}.content,header{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;width:100%}header{-webkit-align-items:center;-ms-flex-align:center;align-items:center;height:45px;padding-left:20px;background:#434343;box-shadow:0 .2rem .3rem rgba(0,0,0,.3)}header h3{color:#fff;font-weight:400}main{width:80%;text-align:center}.images-list{padding:10px}.images-list img{border:none;border-radius:3px;margin:10px;display:inline-block;max-height:23%;max-width:23%}.images-list img:hover{cursor:pointer;opacity:.7;border:1px solid #333}@supports ((display:-ms-grid) or (display:grid)){.images-list{display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[4];grid-template-columns:repeat(4,1fr);-ms-grid-rows:(1fr)[3];grid-template-rows:repeat(3,1fr)}.images-list img{max-width:92%;max-height:92%}}aside{width:20%;min-width:200px;padding:20px}aside h3{text-transform:uppercase;color:#c4c4c4}.filter h4{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin:10px 0;width:100%;height:30px;padding-left:10px;background:#efefef}.filter .author,.filter .size{margin-left:5px}#authors{list-style-type:none}#authors li{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin:5px 0 0 10px}#authors li input{margin-right:5px}#filter-size{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;list-style-type:none}#filter-size,#filter-size li{display:-webkit-flex;display:-ms-flexbox;display:flex}#filter-size li{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin:5px 0 0 10px}#filter-size li input{margin-right:5px}.pagination{-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;height:80px}.pagination,.pagination ul{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.pagination ul{-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}.pagination ul li{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.pagination button,.pagination li{width:30px;height:30px;font-size:16px;background:#dcdcdc;border:1px solid #000;border-right:none}.pagination button:hover,.pagination li:hover{cursor:pointer}.pagination .active-page{background:gray;color:#fff}.pagination #next{border-top-right-radius:5px;border-bottom-right-radius:5px;border-right:1px solid #000}.pagination #prev{border-top-left-radius:5px;border-bottom-left-radius:5px}#wrap{background:#000;opacity:.8;padding:20px 40px;z-index:1}#view{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;z-index:2;padding:20px}#view img{border-radius:3px;height:100%}#view button{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;margin-left:10px}#view button svg{fill:#fff}#view button svg:hover{fill:red}#view,#wrap{display:none;position:absolute;left:0;height:0;width:100%;height:100%}</style></head>
+
+<body>
+  <div id="wrap"></div>
+  <div id="view"></div>
+  <header>
+    <h3>Image view</h3>
+  </header>
+  <div class="content">
+    <main>
+      <div class="images-list" id="list"></div>
+      <div class="pagination">
+        <button id="prev"><</button>
+        <ul id="pagination"></ul>
+        <button id="next">></button>
+      </div>
+    </main>
+    <aside class="filter">
+      <h3>Filter by</h3>
+      <div class="size">
+        <h4>Size</h4>
+        <ul id="filter-size">
+          <li><input type="radio" name="filter" id="large" checked>Large</li>
+          <li><input type="radio" name="filter" id="medium">Medium</li>
+          <li><input type="radio" name="filter" id="small">Small</li>
+        </ul>
+      </div>
+      <div class="author">
+        <h4>Author</h4>
+        <ul id="authors"></ul>
+      </div>
+    </aside>
+  </div>
+<script type="text/javascript" src="/build.js"></script></body>
+
+</html>

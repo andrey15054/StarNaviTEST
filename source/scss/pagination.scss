@@ -1,0 +1,40 @@
+.pagination {
+    @include flex(row, center, center);
+    height: 80px;
+  
+    ul {
+      @include flex(row, flex-start, center);
+  
+      li {
+        @include flex(row, center, center);
+      }
+    }
+  
+    button,
+    li {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      background: gainsboro;
+      border: 1px solid black;
+      border-right: none;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    .active-page {
+      background: gray;
+      color: white;
+    }
+    #next {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-right: 1px solid black;
+    }
+    #prev {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }

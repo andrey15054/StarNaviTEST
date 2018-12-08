@@ -1,0 +1,36 @@
+main {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .images-list {
+    padding: 10px;
+  
+    img {
+      border: none;
+      border-radius: 3px;
+      margin: 10px;
+      display: inline-block;
+      max-height: 23%;
+      max-width: 23%;
+  
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+        border: 1px solid #333333;
+      }
+    }
+  }
+  
+  @supports (display: grid) {
+    .images-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+  
+      img {
+        max-width: 92%;
+        max-height: 92%;
+      }
+    }
+  }
